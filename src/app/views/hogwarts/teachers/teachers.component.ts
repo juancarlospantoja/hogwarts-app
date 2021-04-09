@@ -9,10 +9,10 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
  */
 @Component({
   selector: 'body',
-  templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.scss']
+  templateUrl: './teachers.component.html',
+  styleUrls: ['./teachers.component.scss']
 })
-export class Dashboard{
+export class Teachers{
   ye:number=0;
   public info_usuario;
   lista:string[]=["slytherin","gryffindor","ravenclaw", "hufflepuff"];
@@ -33,10 +33,11 @@ export class Dashboard{
    */
   async ngOnInit() {
     this.ye = new Date().getFullYear();
+    this.Users = await this.serviceCalificacionesEst.getTeachers().toPromise();   
   }
 
   async capturar() {
-    this.Users = await this.serviceCalificacionesEst.getCharacter(this.paisFormulario.get('pais').value).toPromise();    
+    this.Users = await this.serviceCalificacionesEst.getTeachers().toPromise();    
   } 
 
   characterAge(yearOfBirth) {

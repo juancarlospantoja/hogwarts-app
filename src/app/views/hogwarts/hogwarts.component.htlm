@@ -1,0 +1,28 @@
+<!-- TODO poner el tittle el los demas componentes y quitarlo de aquí -->
+<div class="col-12 pb-1">
+	<h1>jhakjahskj</h1>
+    <div class="col-12">
+        <div class="table-responsive">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modalLaborPostgrados" data-backdrop="static">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">                
+                <h4 class="modal-title">Agregar Estudiantes</h4>
+            </div>
+            <form name="modalLaborPostgrados">
+                <div class="modal-body">
+                    <ng-include src="'./students/addStudents.template.html'"></ng-include>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default pull-left" ng-click="cancelarLaborPostgrados()" >Cancelar</button>
+                    <button type="button" class="btn btn-primary" validation-submit="modalLaborPostgrados"  ng-click="guardarLaborPostgrados()" >Guardar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

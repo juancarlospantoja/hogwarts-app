@@ -1,0 +1,32 @@
+<div class="form-horizontal">
+	<div class="box-body">
+		<div class="form-group">
+				<label class="col-sm-2 control-label">Tipo labor postgrado</label>
+					<div class="col-sm-4" >	
+
+						<select class="form-control"  ng-model="modalLaborPostgrados.id_clasif_actividad"  ng-options="option.id_clasif_actividad as option.detalle for option in filterClasificacionByLabor(7)">                 			                   			
+                    	</select>						
+					</div>	
+
+				<label  class="col-sm-2 control-label">Actividad labor postrados</label>
+
+					<div class="col-sm-4">
+						<input type="text"  class="form-control"  ng-model="modalLaborPostgrados.descripcion_actividad" validator="required"  required-error-message="{{validationMessages.required}}" name="actividadModalLaborPostgrados" placeholder="Actividad labor postrados">	
+						
+					</div>
+								
+		</div>
+		<div class="form-group">
+			<label  class="col-sm-2 control-label">Horas Semana</label>
+
+			<div class="col-sm-4">
+				<input type="number" class="form-control" validator="required"  required-error-message="{{validationMessages.required}}" name="HS_ModalLaborPostgrados" ng-model="modalLaborPostgrados.cant_hora_semana" placeholder="Cantidad Horas Semanales">				
+			</div>
+
+			<label  class="col-sm-2 control-label">Horas Semestre</label>
+			<div class="col-sm-4" >				
+				<input type="number" class="form-control" value="{{(modalLaborPostgrados.cant_hora_semana * cant_semanas)}}" ng-disabled="true" placeholder="Cantidad Horas Semestrales">
+			</div>
+		</div>
+	</div>	
+</div>

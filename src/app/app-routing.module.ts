@@ -7,7 +7,7 @@ const routes: Routes = [
 
 
   {
-    path: 'hogwarts',
+    path: '',
     component: JLayoutComponent,
     data: {
       title: 'HOGWARTS'
